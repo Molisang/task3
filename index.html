@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <!-- <script src="js/geolocaion.js"></script> -->
 <!-- <script src="js/orientation.js"></script> -->
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 <script src="https://maps.google.com/maps/api/js?key=AIzaSyCH9lNsY3CHrVNsFFSWzxfxO3HCgf5JYjw"></script>
 </head>
 
@@ -54,6 +55,7 @@
 </html>
 
 <script>
+
 var x = document.getElementById("demo");
 function getLocation() {
     if (navigator.geolocation) {
@@ -66,14 +68,16 @@ function getLocation() {
 function showPosition(position) {
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
-    var latlon = new google.maps.LatLng(lat, lon)
-    var mapholder = document.getElementById('mapholder')
-    mapholder.style.height = '250px';
-    mapholder.style.width = '500px';
+    var latlon = new google.maps.LatLng(lat, lon);
+    var mapholder = document.getElementById('mapholder');
+    mapholder.style.height = '450px';
+    mapholder.style.width = '800px';
 
     var myOptions = {
-    center:latlon,zoom:14,
-    mapTypeId:google.maps.MapTypeId.ROADMAP,
+    // center:new google.maps.LatLng(-43.5119195,172.65374549999999), //center
+    center:new google.maps.LatLng(-43.5119195,172.65374549999999),
+    zoom:15, //zoom
+    mapTypeId:google.maps.MapTypeId.ROADMAP, //maptype:ROADMAP
     mapTypeControl:false,
     navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
     }
@@ -99,6 +103,8 @@ function showError(error) {
     }
 }
 </script>
+
+
 
 <script>
       function init() {
