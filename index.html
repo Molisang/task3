@@ -71,12 +71,12 @@ function showPosition(position) {
     var latlon = new google.maps.LatLng(lat, lon);
     var mapholder = document.getElementById('mapholder');
     mapholder.style.height = '450px';
-    mapholder.style.width = '800px';
+    mapholder.style.width = '100%';
 
     var myOptions = {
     // center:new google.maps.LatLng(-43.5119195,172.65374549999999), //center
     center:latlon,
-    zoom:15, //zoom
+    zoom:13, //zoom
     mapTypeId:google.maps.MapTypeId.ROADMAP, //maptype:ROADMAP
     mapTypeControl:false,
     navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
